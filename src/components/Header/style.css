@@ -1,0 +1,28 @@
+header {
+  width: 100vw;
+  border-bottom: 1px solid #ddd;
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+nav ul li button {
+  border: none;
+  background-color: transparent;
+}
+
+nav ul li > button:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.cart-btn {
+  position: relative;
+}

@@ -1,4 +1,5 @@
-import { useCartStore  } from "../store/cartStore"
+import { useCartStore  } from "../../store/cartStore"
+import "./style.css"
 
 export function AvailableItems() {
   const [items, addToCart] = useCartStore((state) => [state.availableItems, state.addToCart])
@@ -9,12 +10,13 @@ export function AvailableItems() {
   })
 
   return (
-    <div>
+    <div className="items-container">
       <h1>Available items</h1>
+
       <ul>
         {items.map((item) => (
           <li key={item.id}>
-            {item.name} - {format(item.price)}
+            {item.name} <br /> {format(item.price)}
             <button onClick={() => addToCart(item)}>Add to cart</button>
           </li>
         ))}

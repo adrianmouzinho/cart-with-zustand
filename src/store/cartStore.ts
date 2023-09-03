@@ -4,32 +4,32 @@ const initialItems = [
   {
     id: 1,
     name: "Camiseta Polo",
-    price: 39.99
+    price: 35.50
   },
   {
     id: 2,
     name: "Calça Jeans",
-    price: 59.99
+    price: 50.00
   },
   {
     id: 3,
     name: "Tênis Esportivo",
-    price: 79.99
+    price: 72.00
   },
   {
     id: 4,
     name: "Relógio de Pulso",
-    price: 99.99
+    price: 100.00
   }
 ]
 
-type Item = {
+export type Item = {
   id: number
   name: string
   price: number
 }
 
-type CartItem = {
+export type CartItem = {
   id: number
   name: string
   price: number
@@ -37,6 +37,8 @@ type CartItem = {
 }
 
 interface CartState {
+  isCartOpen: boolean
+  toggleCart: () => void
   availableItems: Item[]
   cart: CartItem[]
   addToCart: (item: Item) => void
@@ -44,6 +46,8 @@ interface CartState {
 }
 
 export const useCartStore = create<CartState>((set) => ({
+  isCartOpen: false,
+  toggleCart: () => set((state) => ({ isCartOpen: !state.isCartOpen })),
   availableItems: initialItems,
   cart: [],
   addToCart: (item) => set((state) => {

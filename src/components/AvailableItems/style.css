@@ -1,0 +1,23 @@
+.items-container {
+  margin-top: 24px;
+}
+
+.items-container h1 {
+  margin-bottom: 16px;
+}
+
+.items-container ul {
+  display: flex;
+  gap: 16px;
+}
+
+.items-container ul li {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+}
